@@ -1,26 +1,39 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <main>
+    <NavbarMain />
+    <h1 class="text-sky-500">{{ user.fullname }}</h1>
+  </main>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import NavbarMain from "./components/Navbar/NavbarMain.vue";
+import { computed } from "vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    NavbarMain,
+  },
+  data() {
+    return {
+      user: {
+        fullname: "Rakhel Cakra Kusumadinata Sera",
+        username: "@cakra_ksera",
+        avatarUrl:
+          "https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      },
+    };
+  },
+  provide() {
+    return {
+      fullname: computed(() => this.user.fullname),
+      username: computed(() => this.username),
+      avatarUrl: computed(() => this.avatarUrl),
+    };
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import "./style.css";
 </style>
