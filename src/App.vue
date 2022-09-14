@@ -27,8 +27,8 @@ export default {
   provide() {
     return {
       fullname: computed(() => this.user.fullname),
-      username: computed(() => this.username),
-      avatarUrl: computed(() => this.avatarUrl),
+      username: computed(() => this.user.username),
+      avatarUrl: computed(() => this.user.avatarUrl),
     };
   },
 };
