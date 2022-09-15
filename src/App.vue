@@ -1,20 +1,25 @@
 <template>
-  <main>
+  <div class="mx-auto px-10">
     <NavbarMain />
-    <InputTwitter />
-  </main>
+    <main class="">
+      <InputTwitter :closed="false" />
+      <CardView />
+    </main>
+  </div>
 </template>
 
 <script>
 import NavbarMain from "./components/Navbar/NavbarMain.vue";
-import { computed } from "vue";
 import InputTwitter from "./components/InputTwitter/InputTwitter.vue";
+import { computed } from "vue";
+import CardView from "./components/CardView/CardView.vue";
 
 export default {
   name: "App",
   components: {
     NavbarMain,
     InputTwitter,
+    CardView,
   },
   data() {
     return {
@@ -38,6 +43,7 @@ export default {
 
 <style>
 @import "./style.css";
+
 body {
   background-color: black;
 }

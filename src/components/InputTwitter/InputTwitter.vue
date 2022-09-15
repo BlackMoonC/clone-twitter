@@ -1,6 +1,6 @@
 <template>
   <div
-    class="border-2 rounded-sm container text-center mx-auto w-8/12 mt-10 rounded-xl"
+    class="border-2 rounded-sm container text-center w-8/12 mt-10 rounded-xl"
   >
     <textarea
       class="mb-10 mt-9 rounded-sm"
@@ -12,17 +12,21 @@
     ></textarea>
     <div class="flex justify-between px-10 pb-6">
       <p class="text-white">{{ message.length }}/10</p>
-      <button
-        class="bg-blue-400 px-7 py-1 rounded-sm disabled:bg-blue-300 disabled:text-white"
-        :disabled="isButtonDisabled"
-        @click="checked"
-      >
-        Tweet
-      </button>
+      <div class="fle">
+        <button class="bg-red-700 px-7 py-1 rounded-sm" v-if="closed">
+          Close
+        </button>
+        <button
+          class="bg-blue-400 px-7 py-1 rounded-sm disabled:bg-blue-300 disabled:text-white"
+          :disabled="isButtonDisabled"
+          @click="checked"
+        >
+          Tweet
+        </button>
+      </div>
     </div>
   </div>
 </template>
-
 <script>
 export default {
   data() {
@@ -30,6 +34,9 @@ export default {
       message: "",
       inputLimit: 0,
     };
+  },
+  props: {
+    closed: Boolean,
   },
   methods: {
     checked() {
@@ -46,6 +53,11 @@ export default {
         return false;
       }
     },
+  },
+  mounted() {
+    this.$refs.inputan.focus();
+    console.info(this.closed);
+    console.info(typeof this.closed);
   },
 };
 </script>

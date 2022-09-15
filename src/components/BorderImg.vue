@@ -1,19 +1,16 @@
 <template>
-  <div>
-    <img
-      :src="url"
-      :style="{ width: width + 'px', height: height + 'px' }"
-      class="rounded-full border-2"
-    />
-  </div>
+  <img
+    :src="url"
+    :style="{ width: scale + 'px', height: scale + 'px' }"
+    class="rounded-full border-2"
+  />
 </template>
 
 <script>
 export default {
   props: {
     url: String,
-    width: String,
-    height: String,
+    scale: String,
   },
 };
 </script>
