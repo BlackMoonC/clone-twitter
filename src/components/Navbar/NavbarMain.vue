@@ -3,8 +3,8 @@
     <h1><a href="#">Simple Twitter with Vue</a></h1>
     <div class="user-profile flex">
       <div class="mr-5">
-        <p>{{ fullname }}</p>
-        <p class="text-[#EEF1FF]">{{ username }}</p>
+        <p>{{ fullname.value }}</p>
+        <p class="text-[#EEF1FF]">{{ username.value }}</p>
       </div>
       <BorderImg :url="avatarDataUrl" width="40" height="40" />
     </div>

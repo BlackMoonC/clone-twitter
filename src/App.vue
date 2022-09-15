@@ -1,18 +1,20 @@
 <template>
   <main>
     <NavbarMain />
-    <h1 class="text-sky-500">{{ user.fullname }}</h1>
+    <InputTwitter />
   </main>
 </template>
 
 <script>
 import NavbarMain from "./components/Navbar/NavbarMain.vue";
 import { computed } from "vue";
+import InputTwitter from "./components/InputTwitter/InputTwitter.vue";
 
 export default {
   name: "App",
   components: {
     NavbarMain,
+    InputTwitter,
   },
   data() {
     return {
@@ -36,4 +38,7 @@ export default {
 
 <style>
 @import "./style.css";
+body {
+  background-color: black;
+}
 </style>
