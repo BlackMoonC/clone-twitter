@@ -13,7 +13,11 @@
     <div class="flex justify-between px-10 pb-6">
       <p class="text-white">{{ message.length }}/10</p>
       <div class="fle">
-        <button class="bg-red-700 px-7 py-1 rounded-sm" v-if="closed">
+        <button
+          @click="$emit('conditionReply')"
+          class="bg-red-700 px-7 py-1 rounded-sm"
+          v-if="closed"
+        >
           Close
         </button>
         <button

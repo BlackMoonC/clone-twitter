@@ -32,10 +32,15 @@
       <button
         class="bg-purple-lightshade border-2 w-full rounded-md mx-6"
         @click="conditionReply"
+        v-if="!reply"
       >
         Reply
       </button>
-      <InputTwitter :closed="true" v-if="reply" />
+      <InputTwitter
+        :closed="true"
+        v-if="reply"
+        @conditionReply="conditionReply"
+      />
     </div>
   </div>
 </template>
@@ -54,8 +59,10 @@ export default {
   },
   methods: {
     conditionReply() {
+      console.info("Working Closed");
       this.reply = !this.reply;
     },
+    conditionClosed() {},
   },
 };
 </script>
